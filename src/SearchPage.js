@@ -33,7 +33,7 @@ class SearchPage extends Component {
               <input
                 type="radio"
                 id={ categoria.id }
-                name={ categoria.id }
+                name="categories"
                 value={ categoria.name }
               />
               {categoria.name}
