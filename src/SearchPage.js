@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { getCategories } from './services/api';
 import { Link } from 'react-router-dom';
 import { BsCart4 } from 'react-icons/bs';
+import { getCategories } from './services/api';
 
 class SearchPage extends Component {
   constructor() {
