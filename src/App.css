@@ -12,3 +12,13 @@
   text-align: center;
   width: 1000px;
 }
+
+.sideBar {
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding-top: 20px;
+  
+
+}
