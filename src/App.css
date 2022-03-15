@@ -20,3 +20,22 @@
   justify-content: left;
   padding-top: 20px;
 }
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  background-color: rgb(212, 195, 195);
+  border: 3px solid rgba(0, 0, 0, 0.125);
+  border-radius: 2px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.418);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  height: 20%;
+  margin: 5px;
+  width: 300px;
+}
