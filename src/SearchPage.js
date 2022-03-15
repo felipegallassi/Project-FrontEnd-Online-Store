@@ -87,7 +87,6 @@ class SearchPage extends Component {
               : (<h2>Nenhum produto foi encontrado</h2>)}
           </div>
         </div>
-
       </div>
     );
   }
