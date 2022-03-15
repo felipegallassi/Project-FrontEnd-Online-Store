@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { BsCart4 } from 'react-icons/bs';
-import { getCategories, getProductsFromQuery } from './services/api';
+import { getCategories, getProductsFromQuery, getProductsFromCategoryAndQuery }
+from './services/api';
 import Card from './Card';
 
 class SearchPage extends Component {
@@ -33,6 +34,12 @@ class SearchPage extends Component {
     this.setState({
       products: productsFetched.results,
     });
+  }
+
+  categoryProducts = async ({ target }) => {
+    const catValue = target.id;
+    const products = await getProductsFromCategoryAndQuery(catValue);
+    this.setState({ products: products.results });
   }
 
   render() {
@@ -70,6 +77,7 @@ class SearchPage extends Component {
                   id={ categoria.id }
                   name="categories"
                   value={ categoria.name }
+                  onClick={this.categoryProducts}
                 />
                 {categoria.name}
               </label>
