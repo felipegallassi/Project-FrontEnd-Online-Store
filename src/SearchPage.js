@@ -77,7 +77,7 @@ class SearchPage extends Component {
                   id={ categoria.id }
                   name="categories"
                   value={ categoria.name }
-                  onClick={this.categoryProducts}
+                  onClick={ this.categoryProducts }
                 />
                 {categoria.name}
               </label>
