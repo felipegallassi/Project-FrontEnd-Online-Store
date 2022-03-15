@@ -61,30 +61,33 @@ class SearchPage extends Component {
         <h2 data-testid="home-initial-message">
           Digite algum termo de pesquisa ou escolha uma categoria.
         </h2>
-        <div className="sideBar">
-          {categories.map((categoria) => (
-            <label htmlFor={ categoria.id } data-testid="category" key={ categoria.id }>
-              <input
-                type="radio"
-                id={ categoria.id }
-                name="categories"
-                value={ categoria.name }
-              />
-              {categoria.name}
-            </label>
-          ))}
+        <div className="searchPageResults">
+          <div className="sideBar">
+            {categories.map((categoria) => (
+              <label htmlFor={ categoria.id } data-testid="category" key={ categoria.id }>
+                <input
+                  type="radio"
+                  id={ categoria.id }
+                  name="categories"
+                  value={ categoria.name }
+                />
+                {categoria.name}
+              </label>
+            ))}
+          </div>
+          <div className="container">
+            {products.length > 0
+              ? (products.map((product) => (
+                <Card
+                  key={ product.id }
+                  title={ product.title }
+                  thumbnail={ product.thumbnail }
+                  price={ product.price }
+                />)))
+              : (<h2>Nenhum produto foi encontrado</h2>)}
+          </div>
         </div>
-        <div className="container">
-          {products.length > 0
-            ? (products.map((product) => (
-              <Card
-                key={ product.id }
-                title={ product.title }
-                thumbnail={ product.thumbnail }
-                price={ product.price }
-              />)))
-            : (<h2>Nenhum produto foi encontrado</h2>)}
-        </div>
+
       </div>
     );
   }
