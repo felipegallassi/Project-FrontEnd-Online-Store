@@ -46,6 +46,7 @@ class Card extends React.Component {
            data-testid="product-detail-link"
            type="button"
            onClick={ this.showProductsDetails }
+           id={ id }
          >
            Detalhes do produto
          </button>

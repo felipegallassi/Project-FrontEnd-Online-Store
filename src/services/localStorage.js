@@ -12,7 +12,6 @@ export function saveProduct(product) {
     } else {
       productsArray.push(product);
     }
-    console.log(productFind);
   }
   localStorage.setItem('products', JSON.stringify(productsArray));
 }

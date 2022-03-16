@@ -5,7 +5,6 @@ import { getSavedProducts } from './services/localStorage';
 class ShoppingCart extends React.Component {
   constructor() {
     super();
-    console.log('ShoppingCart-constructor');
     this.state = {
       products: [],
       isEmptyCart: true,
@@ -13,7 +12,10 @@ class ShoppingCart extends React.Component {
   }
 
   componentDidMount = () => {
-    console.log('componentDidMount');
+    this.getCartSavedProducts();
+  }
+
+  getCartSavedProducts = () => {
     const response = getSavedProducts();
     if (response) {
       this.setState({
@@ -23,23 +25,8 @@ class ShoppingCart extends React.Component {
     }
   }
 
-  componentWillUnmount = () => {
-    console.log('componentWillUnmount');
-  }
-
-  shouldComponentUpdate = () => {
-    console.log('shouldComponentUpdate');
-    return true;
-  }
-
-  componentDidUpdate = () => {
-    console.log('componentDidUpdate');
-  }
-
   render() {
     const { isEmptyCart, products } = this.state;
-    console.log(products);
-
     const emptyCartElement = (
       <h1 data-testid="shopping-cart-empty-message">
         Seu carrinho está vazio
@@ -54,6 +41,7 @@ class ShoppingCart extends React.Component {
           thumbnail={ product.thumbnail }
           price={ product.price }
           quantity={ product.quantity }
+          callback={ this.getCartSavedProducts }
         />)))
     );
     return (
