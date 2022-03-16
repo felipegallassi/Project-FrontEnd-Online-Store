@@ -5,7 +5,14 @@ export function saveProduct(product) {
     productsArray.push(product);
   } else {
     productsArray = response;
-    productsArray.push(product);
+    const productFind = productsArray
+      .find((productCart) => productCart.id === product.id);
+    if (productFind) {
+      productFind.quantity += 1;
+    } else {
+      productsArray.push(product);
+    }
+    console.log(productFind);
   }
   localStorage.setItem('products', JSON.stringify(productsArray));
 }

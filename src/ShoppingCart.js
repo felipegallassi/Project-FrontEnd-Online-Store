@@ -1,5 +1,5 @@
 import React from 'react';
-import CardSpec from './CardSpec';
+import CardCart from './CardCart';
 import { getSavedProducts } from './services/localStorage';
 
 class ShoppingCart extends React.Component {
@@ -47,12 +47,13 @@ class ShoppingCart extends React.Component {
 
     const productsElement = (
       (products.map((product) => (
-        <CardSpec
+        <CardCart
           key={ product.id }
           id={ product.id }
           title={ product.title }
           thumbnail={ product.thumbnail }
           price={ product.price }
+          quantity={ product.quantity }
         />)))
     );
     return (
