@@ -88,6 +88,7 @@ class SearchPage extends Component {
               ? (products.map((product) => (
                 <Card
                   key={ product.id }
+                  id={ product.id }
                   title={ product.title }
                   thumbnail={ product.thumbnail }
                   price={ product.price }
