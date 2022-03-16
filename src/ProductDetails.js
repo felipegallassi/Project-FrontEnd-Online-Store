@@ -14,29 +14,31 @@ class ProductDetails extends React.Component {
       thumbnail: '',
       price: 0,
       attributes: [],
+      id: '',
     };
   }
 
   componentDidMount = async () => {
-    const { match: { params: { id } } } = this.props;
-    const productDetails = await getProductDetails(id);
-    const { title, thumbnail, price, attributes } = productDetails;
+    const { match: { params: { idParam } } } = this.props;
+    const productDetails = await getProductDetails(idParam);
+    const { title, thumbnail, price, attributes, id } = productDetails;
     this.setState({
       title,
       thumbnail,
       price,
       attributes,
+      id,
     });
   }
 
   render() {
-    const { title, thumbnail, price, attributes } = this.state;
+    const { title, thumbnail, price, attributes, id } = this.state;
     return (
       <div className="productDetails">
         <Link to="/shopping-cart" data-testid="shopping-cart-button">
           <BsCart4 className="shoppinCart" />
         </Link>
-        <CardSpec title={ title } thumbnail={ thumbnail } price={ price } />
+        <CardSpec title={ title } thumbnail={ thumbnail } price={ price } id={ id } />
         <ProductSpec attributes={ attributes } />
       </div>
     );
@@ -46,7 +48,7 @@ class ProductDetails extends React.Component {
 ProductDetails.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      id: PropTypes.string,
+      idParam: PropTypes.string,
     }),
   }).isRequired,
 };

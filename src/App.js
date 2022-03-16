@@ -12,7 +12,7 @@ class App extends Component {
         <BrowserRouter>
           <Switch>
             <Route
-              path="/product-details/:id"
+              path="/product-details/:idParam"
               component={ ProductDetails }
             />
             <Route
