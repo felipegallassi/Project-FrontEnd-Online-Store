@@ -22,6 +22,10 @@ class ShoppingCart extends React.Component {
         products: response,
         isEmptyCart: false,
       });
+    } else {
+      this.setState({
+        isEmptyCart: true,
+      });
     }
   }
 
@@ -47,6 +51,9 @@ class ShoppingCart extends React.Component {
     return (
       <div>
         {isEmptyCart ? emptyCartElement : productsElement}
+        <div>
+          <h2>Valor total da compra: </h2>
+        </div>
       </div>
     );
   }

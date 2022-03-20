@@ -32,6 +32,7 @@ class Card extends React.Component {
 
    render() {
      const { title, thumbnail, price, id } = this.props;
+     console.log('Card', this.props);
      const { redirectOk } = this.state;
      const pathToProduct = `product-details/${id}`;
      return (
