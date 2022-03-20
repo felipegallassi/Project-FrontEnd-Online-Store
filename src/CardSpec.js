@@ -13,6 +13,7 @@ class CardSpec extends React.Component {
 
   render() {
     const { title, thumbnail, price, id } = this.props;
+    console.log('CardSpec', this.props);
     return (
       <div
         className="card"
@@ -28,6 +29,7 @@ class CardSpec extends React.Component {
         >
           Adicionar ao carrinho
         </button>
+        <h3>{ price }</h3>
       </div>
     );
   }
