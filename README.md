@@ -24,6 +24,6 @@
 
 -Felipe Gallassi
 
-- Vitor Pacheco
+-Vitor Pacheco
 
 -Daniel Aniya
